@@ -20,8 +20,10 @@
     <script src="https://unpkg.com/webtonative@1.0.50/webtonative.min.js"></script>
     <script>
         function payment(){
-            window.WTN.inAppPurchase({ 
+            window.WTN.inAppPurchase({
     productId : "com.wtn.demo", 
+    productType : 'INAPP',
+    isConsumable : true,
     callback : function(data){ 
         var receiptData = data.receiptData;
         console.log('DAta =========================',receiptData);
