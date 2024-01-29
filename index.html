@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Payment WTN</title>
+</head>
+<body>
+    <h1>Thanh toán qua WTN</h1>
+    <div class="card">
+        <img src="https://i.imgur.com/5RkZr7Z.png" alt="card" class="card-img">
+        <div class="card-info">
+            <p>Card Number</p>
+            <p>1234 5678 9012 3456</p>
+            </div>
+    </div>
+    <button type="button" onclick="payment()">
+        <p>Thanh toán 5$</p>
+    </button>
+    <script src="https://unpkg.com/webtonative@1.0.50/webtonative.min.js"></script>
+    <script>
+        function payment(){
+            window.WTN.inAppPurchase({ 
+    productId : "com.wtn.demo", 
+    callback : function(data){ 
+        var receiptData = data.receiptData;
+        console.log('DAta =========================',receiptData);
+        if(data.isSuccess){
+
+            // use this receipt data to verify transaction from app store 
+            // refer : https://developer.apple.com/documentation/appstorereceipts/verifyreceipt
+        }
+     } 
+ },)
+        }
+    </script>
+</body>
+
+</html>
