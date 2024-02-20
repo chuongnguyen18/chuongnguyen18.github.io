@@ -10,16 +10,16 @@
 
     //Login Commands
     function facebookLog() {
-      google.login({
-  callback : function(value){
-    console.log(value)
-  }
-});
+      facebook.login({
+        callback: function (value) {
+          console.log(value)
+        }
+      });
     }
     function payment() {
       try {
         console.log("payment something ========================"),
-          WTN.inAppPurchase({
+          window.WTN.inAppPurchase({
             productId: "com.wtn.demo",
             productType: 'INAPP',
             isConsumable: true,
