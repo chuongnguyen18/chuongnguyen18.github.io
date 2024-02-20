@@ -10,11 +10,11 @@
 
     //Login Commands
     function facebookLog() {
-      facebook.login({
-        callback: function (value) {
-          console.log(value)
-        }
-      });
+      google.login({
+  callback : function(value){
+    console.log(value)
+  }
+});
     }
     function payment() {
       try {
